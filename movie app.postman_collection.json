@@ -1,0 +1,201 @@
+{
+	"info": {
+		"_postman_id": "a0b33864-d316-4ec8-aba5-cfc6f7bd4a1e",
+		"name": "movie app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "39332517"
+	},
+	"item": [
+		{
+			"name": "create-movie",
+			"request": {
+				"auth": {
+					"type": "jwt",
+					"jwt": {
+						"algorithm": "HS256",
+						"isSecretBase64Encoded": false,
+						"payload": "{}",
+						"addTokenTo": "header",
+						"headerPrefix": "Bearer",
+						"queryParamKey": "token",
+						"header": "{}"
+					}
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzdmNzc5ZTEyYTIwODYyYTM0ODFkOWMiLCJpYXQiOjE3MzY0MDY5NDIsImV4cCI6MTczNjYyMjk0MiwidHlwZSI6ImFjY2VzcyJ9.zjQ4XMhx4od3KHdM-DUFk1YOLDis2wZJ0TLkFpM5gps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Tenet",
+							"type": "text"
+						},
+						{
+							"key": "year",
+							"value": "2020",
+							"type": "text"
+						},
+						{
+							"key": "poster",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": "http://localhost:6000/v1/movie"
+			},
+			"response": []
+		},
+		{
+			"name": "get-movies",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzdmNzc5ZTEyYTIwODYyYTM0ODFkOWMiLCJpYXQiOjE3MzY0MDY5NDIsImV4cCI6MTczNjYyMjk0MiwidHlwZSI6ImFjY2VzcyJ9.zjQ4XMhx4od3KHdM-DUFk1YOLDis2wZJ0TLkFpM5gps",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:6000/v1/movie?limit=2&page=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "6000",
+					"path": [
+						"v1",
+						"movie"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": null,
+							"disabled": true
+						},
+						{
+							"key": "limit",
+							"value": "2"
+						},
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-movie",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzdmNzc5ZTEyYTIwODYyYTM0ODFkOWMiLCJpYXQiOjE3MzY0MDY5NDIsImV4cCI6MTczNjYyMjk0MiwidHlwZSI6ImFjY2VzcyJ9.zjQ4XMhx4od3KHdM-DUFk1YOLDis2wZJ0TLkFpM5gps",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "Tenet Updated",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "year",
+							"value": "2021",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "poster",
+							"type": "file",
+							"src": "/C:/Users/TheHexaTown/Downloads/THT wallpaper new - Light Trail.png"
+						}
+					]
+				},
+				"url": "http://localhost:8000/v1/movie/677f783812a20862a3481da7"
+			},
+			"response": []
+		},
+		{
+			"name": "get-single-movie",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzdmNzc5ZTEyYTIwODYyYTM0ODFkOWMiLCJpYXQiOjE3MzY0MDY5NDIsImV4cCI6MTczNjYyMjk0MiwidHlwZSI6ImFjY2VzcyJ9.zjQ4XMhx4od3KHdM-DUFk1YOLDis2wZJ0TLkFpM5gps",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:6000/v1/movie/677f783812a20862a3481da7"
+			},
+			"response": []
+		},
+		{
+			"name": "delete-movie",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2NzdmNzc5ZTEyYTIwODYyYTM0ODFkOWMiLCJpYXQiOjE3MzY0MDY5NDIsImV4cCI6MTczNjYyMjk0MiwidHlwZSI6ImFjY2VzcyJ9.zjQ4XMhx4od3KHdM-DUFk1YOLDis2wZJ0TLkFpM5gps",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:6000/v1/movie/677f783812a20862a3481da7"
+			},
+			"response": []
+		},
+		{
+			"name": "register-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"abdullah.tanveer@thehexatown.com\",\r\n    \"password\": \"1qaz2wsx3edc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:6000/v1/auth/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"abdullah.tanveer@thehexatown.com\",\r\n    \"password\": \"1qaz2wsx3edc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:6000/v1/auth/login"
+			},
+			"response": []
+		}
+	]
+}
